@@ -1,0 +1,19 @@
+name: Mi Primer Pipeline DevOps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ejecucion-prueba:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar mensaje de confirmacion
+        run: echo "¡El pipeline se disparo automaticamente al detectar un nuevo cambio!"
+
+      - name: Listar los archivos en el servidor de la nube
+        run: ls -la
